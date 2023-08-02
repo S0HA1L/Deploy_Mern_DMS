@@ -3,7 +3,13 @@ const cors = require('cors')
 const mongoose = require('mongoose')
 
 const app = express()
-app.use(cors())
+app.use(cors(
+    {
+        origin: ["https://deploy-mern-dms-api.vercel.app"],
+        methods: ["POST", "GET"],
+        credentials: true
+    }
+))
 app.use(express.json())
 
 const PORT  = process.env.PORT || 8080 
