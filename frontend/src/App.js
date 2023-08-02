@@ -31,7 +31,7 @@ function App() {
 
     const handleSubmit =  async(e)=>{
         e.preventDefault()
-      const data = await axios.post("/create",formData)
+      const data = await axios.post("https://deploy-mern-dms-api.vercel.app/create",formData)
       console.log(data)
       alert(data.data.message)
       setFormData({
